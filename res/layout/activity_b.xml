@@ -10,15 +10,9 @@
     tools:context=".A" >
 
     <TextView
-        android:id="@+id/textview_a"
+        android:id="@+id/textview_b"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="A" />
-
-    <Button
-        android:id="@+id/button_id_goto_b"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Goto B" />
+        android:text="B" />
 
 </LinearLayout>

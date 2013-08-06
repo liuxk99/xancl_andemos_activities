@@ -2,13 +2,10 @@ package com.xancl.activities;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
-import android.view.View;
-import android.view.View.OnClickListener;
 
-public class A extends Activity {
+public class B extends Activity {
 
 	private String TAG;
 
@@ -18,18 +15,8 @@ public class A extends Activity {
 		Log.i(TAG, getCallMethodName());
 
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_a);
+		setContentView(R.layout.activity_b);
 
-		findViewById(R.id.button_id_goto_b).setOnClickListener(
-				new OnClickListener() {
-
-					@Override
-					public void onClick(View v) {
-						Intent i = new Intent();
-						i.setClass(A.this, B.class);
-						startActivity(i);
-					}
-				});
 	}
 
 	@Override
