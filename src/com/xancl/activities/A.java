@@ -51,25 +51,27 @@ public class A extends Activity {
 	}
 
 	@Override
-	protected void onPause() {
-		Log.i(TAG, getCallMethodName());
-		super.onPause();
-	}
-
-	@Override
 	protected void onRestart() {
 		Log.i(TAG, getCallMethodName());
 		super.onRestart();
 	}
 
 	@Override
-	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+	protected void onStart() {
 		Log.i(TAG, getCallMethodName());
-		super.onRestoreInstanceState(savedInstanceState);
-		if (savedInstanceState != null) {
-			Log.i(TAG,
-					"savedInstanceState: " + savedInstanceState.getString(TAG));
-		}
+		super.onStart();
+	}
+
+	@Override
+	protected void onStop() {
+		Log.i(TAG, getCallMethodName());
+		super.onStop();
+	}
+
+	@Override
+	protected void onPause() {
+		Log.i(TAG, getCallMethodName());
+		super.onPause();
 	}
 
 	@Override
@@ -86,15 +88,13 @@ public class A extends Activity {
 	}
 
 	@Override
-	protected void onStart() {
+	protected void onRestoreInstanceState(Bundle savedInstanceState) {
 		Log.i(TAG, getCallMethodName());
-		super.onStart();
-	}
-
-	@Override
-	protected void onStop() {
-		Log.i(TAG, getCallMethodName());
-		super.onStop();
+		super.onRestoreInstanceState(savedInstanceState);
+		if (savedInstanceState != null) {
+			Log.i(TAG,
+					"savedInstanceState: " + savedInstanceState.getString(TAG));
+		}
 	}
 
 	private String getCallMethodName() {
