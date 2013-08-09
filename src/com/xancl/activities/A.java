@@ -17,6 +17,11 @@ public class A extends Activity {
 		TAG = getClass().getSimpleName();
 		Log.i(TAG, getCallMethodName());
 
+		if (savedInstanceState != null) {
+			Log.i(TAG,
+					"savedInstanceState: " + savedInstanceState.getString(TAG));
+		}
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_a);
 
@@ -61,6 +66,10 @@ public class A extends Activity {
 	protected void onRestoreInstanceState(Bundle savedInstanceState) {
 		Log.i(TAG, getCallMethodName());
 		super.onRestoreInstanceState(savedInstanceState);
+		if (savedInstanceState != null) {
+			Log.i(TAG,
+					"savedInstanceState: " + savedInstanceState.getString(TAG));
+		}
 	}
 
 	@Override
@@ -72,6 +81,7 @@ public class A extends Activity {
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		Log.i(TAG, getCallMethodName());
+		outState.putString(TAG, "outState");
 		super.onSaveInstanceState(outState);
 	}
 
