@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.TextView;
 
 public class A extends Activity {
 
@@ -24,6 +25,8 @@ public class A extends Activity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_a);
+		TextView tv = (TextView) findViewById(R.id.textview_a);
+		tv.setText(R.string.hello);
 
 		findViewById(R.id.button_id_goto_b).setOnClickListener(
 				new OnClickListener() {
