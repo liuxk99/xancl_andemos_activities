@@ -1,5 +1,7 @@
 package com.xancl.activities;
 
+import com.xancl.utils.DbgUtils;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -11,12 +13,13 @@ import android.widget.TextView;
 
 public class A extends Activity {
 
-	private String TAG;
+	private String TAG = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		TAG = getClass().getSimpleName();
-		Log.i(TAG, getCallMethodName());
+
+		Log.i(TAG, DbgUtils.getCallMethodName());
 
 		if (savedInstanceState != null) {
 			Log.i(TAG,
@@ -49,60 +52,54 @@ public class A extends Activity {
 
 	@Override
 	protected void onDestroy() {
-		Log.i(TAG, getCallMethodName());
+		Log.i(TAG, DbgUtils.getCallMethodName());
 		super.onDestroy();
 	}
 
 	@Override
 	protected void onRestart() {
-		Log.i(TAG, getCallMethodName());
+		Log.i(TAG, DbgUtils.getCallMethodName());
 		super.onRestart();
 	}
 
 	@Override
 	protected void onStart() {
-		Log.i(TAG, getCallMethodName());
+		Log.i(TAG, DbgUtils.getCallMethodName());
 		super.onStart();
 	}
 
 	@Override
 	protected void onStop() {
-		Log.i(TAG, getCallMethodName());
+		Log.i(TAG, DbgUtils.getCallMethodName());
 		super.onStop();
 	}
 
 	@Override
 	protected void onPause() {
-		Log.i(TAG, getCallMethodName());
+		Log.i(TAG, DbgUtils.getCallMethodName());
 		super.onPause();
 	}
 
 	@Override
 	protected void onResume() {
-		Log.i(TAG, getCallMethodName());
+		Log.i(TAG, DbgUtils.getCallMethodName());
 		super.onResume();
 	}
 
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
-		Log.i(TAG, getCallMethodName());
+		Log.i(TAG, DbgUtils.getCallMethodName());
 		outState.putString(TAG, "outState");
 		super.onSaveInstanceState(outState);
 	}
 
 	@Override
 	protected void onRestoreInstanceState(Bundle savedInstanceState) {
-		Log.i(TAG, getCallMethodName());
+		Log.i(TAG, DbgUtils.getCallMethodName());
 		super.onRestoreInstanceState(savedInstanceState);
 		if (savedInstanceState != null) {
 			Log.i(TAG,
 					"savedInstanceState: " + savedInstanceState.getString(TAG));
 		}
-	}
-
-	private String getCallMethodName() {
-		final StackTraceElement[] ste = Thread.currentThread().getStackTrace();
-		String methodName = ste[3].getMethodName();
-		return methodName;
 	}
 }
